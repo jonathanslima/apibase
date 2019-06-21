@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const paginate = require('mongoose-paginate');
 
 const itemSchema = new mongoose.Schema({
 	nome: {
@@ -7,4 +8,5 @@ const itemSchema = new mongoose.Schema({
 	}
 });
 
+itemSchema.plugin(paginate);
 mongoose.model('Item', itemSchema);
